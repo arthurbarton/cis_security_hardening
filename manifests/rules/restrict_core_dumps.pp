@@ -34,6 +34,7 @@ class cis_security_hardening::rules::restrict_core_dumps (
     }
 
     sysctl { 'fs.suid_dumpable':
+      provider  => 'linux',
       ensure    => present,
       permanent => 'yes',
       value     => 0,
