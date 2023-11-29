@@ -85,6 +85,12 @@
       ]
     },
     {
+      "operatingsystem": "OracleLinux",
+      "operatingsystemrelease": [
+        "9"
+      ]
+    },
+    {
       "operatingsystem": "AlmaLinux",
       "operatingsystemrelease": [
         "8",

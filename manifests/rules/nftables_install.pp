@@ -33,7 +33,7 @@ class cis_security_hardening::rules::nftables_install (
         $pkgs_remove = ['firewalld']
         $pkgs_install = ['nftables']
       }
-      'centos', 'redhat', 'rocky', 'almalinux': {
+      'centos', 'redhat', 'oraclelinux', 'rocky', 'almalinux': {
         case $facts['os']['release']['major'] {
           '9': {
             $pkgs_install = ['nftables', 'libnftnl']

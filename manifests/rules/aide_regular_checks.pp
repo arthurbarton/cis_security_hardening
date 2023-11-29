@@ -33,7 +33,7 @@ class cis_security_hardening::rules::aide_regular_checks (
 ) {
   if $enforce {
     case $facts['os']['name'].downcase() {
-      'centos', 'redhat', 'sles', 'almalinux', 'rocky': {
+      'centos', 'redhat', 'oraclelinux', 'sles', 'almalinux', 'rocky': {
         $aide_bin = '/usr/sbin/aide'
         $config = ''
         $content = "${hour} ${minute} * * * root ${aide_bin} --check\n"

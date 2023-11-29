@@ -56,7 +56,7 @@ class cis_security_hardening::rules::aide_installed (
           require     => Package['aide', 'aide-common'],
         }
       }
-      'centos', 'redhat', 'almalinux', 'rocky': {
+      'centos', 'redhat', 'oraclelinux', 'almalinux', 'rocky': {
         ensure_packages(['aide'], {
             ensure => installed,
             notify => Exec['aidedb'],

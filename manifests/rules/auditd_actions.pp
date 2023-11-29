@@ -30,7 +30,7 @@ class cis_security_hardening::rules::auditd_actions (
       default => fact('cis_security_hardening.auditd.uid_min'),
     }
     case $facts['os']['name'].downcase() {
-      'redhat', 'centos', 'almalinux', 'rocky': {
+      'redhat', 'oraclelinux', 'centos', 'almalinux', 'rocky': {
         if $facts['os']['release']['major'] >= '8' {
           concat::fragment { 'watch admin actions rule 1':
             order   => 21,

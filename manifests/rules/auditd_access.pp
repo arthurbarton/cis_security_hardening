@@ -47,7 +47,7 @@ class cis_security_hardening::rules::auditd_access (
         $content_rule3 = "-a always,exit -F arch=b64 -S creat,open,openat,truncate,ftruncate -F exit=-EACCES -F auid>=${uid} -F auid!=${auid} -k access" #lint:ignore:140chars
         $content_rule4 = "-a always,exit -F arch=b64 -S creat,open,openat,truncate,ftruncate -F exit=-EPERM -F auid>=${uid} -F auid!=${auid} -k access"  #lint:ignore:140chars
       }
-      'redhat': {
+      'redhat', 'oraclelinux': {
         if $facts['os']['release']['major'] >= '9' {
           $content_rule1 = "-a always,exit -F arch=b32 -S creat,open,openat,truncate,ftruncate -F exit=-EACCES -F auid>=${uid} -F auid!=${auid} -k access" #lint:ignore:140chars
           $content_rule2 = "-a always,exit -F arch=b32 -S creat,open,openat,truncate,ftruncate -F exit=-EPERM -F auid>=${uid} -F auid!=${auid} -k access" #lint:ignore:140chars
