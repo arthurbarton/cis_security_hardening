@@ -35,6 +35,7 @@ class cis_security_hardening::rules::umask_setting (
       'redhat': {
         if ($facts['os']['name'].downcase() == 'redhat' and $facts['os']['release']['major'] >= '9') or
         ($facts['os']['name'].downcase() == 'rocky' and $facts['os']['release']['major'] >= '9') or
+        ($facts['os']['name'].downcase() == 'oraclelinux' and $facts['os']['release']['major'] >= '9') or
         ($facts['os']['name'].downcase() == 'almalinux' and $facts['os']['release']['major'] >= '9') {
           $services = [
             'common-session',

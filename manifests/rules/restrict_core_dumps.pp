@@ -37,6 +37,7 @@ class cis_security_hardening::rules::restrict_core_dumps (
       ensure    => present,
       permanent => 'yes',
       value     => 0,
+      provider  => 'linux',
     }
 
     $installed = fact('cis_security_hardening.systemd-coredump') ? {
