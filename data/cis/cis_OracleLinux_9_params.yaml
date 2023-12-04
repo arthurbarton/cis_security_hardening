@@ -442,9 +442,7 @@ cis_security_hardening::rules::sshd_limit_access::enforce: true
 cis_security_hardening::rules::sshd_limit_access::allow_users:
   - root
   - vagrant
-  - centos
   - ec2-user
-  - ubuntu
 cis_security_hardening::rules::sshd_limit_access::deny_users: []
 cis_security_hardening::rules::sshd_limit_access::allow_groups: []
 cis_security_hardening::rules::sshd_limit_access::deny_groups: []
